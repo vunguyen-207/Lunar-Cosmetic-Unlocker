@@ -27,7 +27,7 @@ VERSIONS.extend([f"1.21.{i}" for i in range(1, 11)])
 
 def choose_version(): # I didn't filter 1.21.2. While making this I changed my mind and make the script paste the jar into EVERY folder in the directory instead of just the specified version.
     os.system('cls')
-    print("\033[1;39m[\033[0;31mvn.dev\033[1;39m] Pick your favourite version (Make sure it was installed!)")
+    print("\033[1;39m[\033[0;31mvu\033[1;39m] Pick your favourite version (Make sure it was installed!)")
     for i, v in enumerate(VERSIONS, start=1):
         print(f"{i}. {v}")
     choice = input("Choose one: ").strip()
@@ -45,11 +45,11 @@ def download_file(reqfile, dst_path):
     print(f"Applying.. Please stand by.")
     try:
         urllib.request.urlretrieve(reqfile, dst_path)
-        print(f"\033[1;39m[\033[0;31mvn.dev\033[1;39m] Applied.")
+        print(f"\033[1;39m[\033[0;31mvu\033[1;39m] Applied.")
     except Exception as e:
         os.system('cls')
-        print("\033[1;39m[\033[0;31mvn.dev\033[1;39m] Exception while installing required mod.")
-        print("\033[1;39m[\033[0;31mvn.dev\033[1;39m] Consider checking your internet.")
+        print("\033[1;39m[\033[0;31mvu\033[1;39m] Exception while installing required mod.")
+        print("\033[1;39m[\033[0;31mvu\033[1;39m] Consider checking your internet.")
         raise
 
 
@@ -60,15 +60,15 @@ major_minor = '.'.join(parts[:2])
 home = os.path.expanduser("~")
 
 mods_path = os.path.join(home, ".lunarclient", "profiles", "lunar", major_minor, "mods")
-print("\033[1;39m[\033[0;31mvn.dev\033[1;39m] We got your mods directory.")
+print("\033[1;39m[\033[0;31mvu\033[1;39m] We got your mods directory.")
 
 if not os.path.exists(mods_path):
     try:
         os.makedirs(mods_path, exist_ok=True)
-        print(f"\033[1;39m[\033[0;31mvn.dev\033[1;39m] We just created the directory for you. Make sure you didn't enable 'Override Global Setting' for 'Game Directory' in the Fabric settings. ", mods_path)
+        print(f"\033[1;39m[\033[0;31mvu\033[1;39m] We just created the directory for you. Make sure you didn't enable 'Override Global Setting' for 'Game Directory' in the Fabric settings. ", mods_path)
     except Exception as e:
         os.system('cls')
-        print("\033[1;39m[\033[0;31mvn.dev\033[1;39m] Exception while creating missing directory. Consider running the file as Administrator.")
+        print("\033[1;39m[\033[0;31mvu\033[1;39m] Exception while creating missing directory. Consider running the file as Administrator.")
         time.sleep(5)
         sys.exit(1)
 
@@ -76,10 +76,10 @@ moddirectory = os.path.join(mods_path, f"fabric-{version}") # Only for fabrics, 
 if not os.path.exists(moddirectory):
     try:
         os.makedirs(moddirectory, exist_ok=True)
-        print(f"\033[1;39m[\033[0;31mvn.dev\033[1;39m] Created missing mods directory: {moddirectory}")
+        print(f"\033[1;39m[\033[0;31mvu\033[1;39m] Created missing mods directory: {moddirectory}")
     except Exception:
         os.system('cls')
-        print("\033[1;39m[\033[0;31mvn.dev\033[1;39m] Exception while creating Fabric directory. Consider running the unlocker as Administrator.")
+        print("\033[1;39m[\033[0;31mvu\033[1;39m] Exception while creating Fabric directory. Consider running the unlocker as Administrator.")
         time.sleep(5)
         sys.exit(1)
 
@@ -88,7 +88,7 @@ try:
     download_file(reqfile, tmp_file)
 except Exception:
     os.system('cls')
-    print("\033[1;39m[\033[0;31mvn.dev\033[1;39m] Exception while downloading required mod. Consider checking your internet.")
+    print("\033[1;39m[\033[0;31mvu\033[1;39m] Exception while downloading required mod. Consider checking your internet.")
     time.sleep(5)
     sys.exit(1)
 
@@ -108,11 +108,11 @@ for t in targets:
     try:
         shutil.copy2(tmp_file, dst)
         copied += 1
-        print(f"\033[1;39m[\033[0;31mvn.dev\033[1;39m] Done.")
+        print(f"\033[1;39m[\033[0;31mvu\033[1;39m] Done.")
     except Exception as e:
-        print(f"\033[1;39m[\033[0;31mvn.dev\033[1;39m] Exception while applying the required mod into the directory {dst}:", e)
+        print(f"\033[1;39m[\033[0;31mvu\033[1;39m] Exception while applying the required mod into the directory {dst}:", e)
             
 os.system('cls')
-print(f"\033[1;39m[\033[0;31mvn.dev\033[1;39m] Everything's done! You are good to go :)")
+print(f"\033[1;39m[\033[0;31mvu\033[1;39m] Everything's done! You are good to go :)")
 time.sleep(5)
 sys.exit(1)
