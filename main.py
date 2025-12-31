@@ -8,7 +8,7 @@ from time import sleep
 import tempfile
 import urllib.request
 
-reqfile = "https://github.com/prometheusreengineering/lunar/releases/download/1.1.0/prometheus-1.1.0-lunar.jar" # Just maybe, use the jar that i put in the same directory with this script instead of the link for safety purposes..
+reqfile = "https://github.com/prometheusreengineering/lunar/releases/download/1.2.0/prometheus-1.2.0-lunar.jar" # Just maybe, use the jar that i put in the same directory with this script instead of the link for safety purposes..
 mainfile = os.path.basename(reqfile)
 
 VERSIONS = [
