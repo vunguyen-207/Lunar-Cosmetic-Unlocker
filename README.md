@@ -10,7 +10,7 @@ Just open the tool and **enjoy**.
 ---
 
 ## ✨ Features
-- Unlocks **almost all** Lunar Client cosmetics.
+- Unlocks **all** Lunar Client cosmetics.
 - One single click, choose your favourite version and the tool handles everything automatically.
 
 ---
